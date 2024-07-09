@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Username Conflict</title>
+</head>
+<body>
+    <h1>Username Conflict</h1>
+    <p>The username <strong>{{.BaseUsername}}</strong> is already taken. We suggest the username <strong>{{.SuggestedUsername}}</strong>.</p>
+    <form action="/auth/confirm-username" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="{{.SuggestedUsername}}" required>
+        <input type="hidden" name="email" value="{{.Email}}">
+        <input type="hidden" name="icon_url" value="{{.IconURL}}">
+        <button type="submit">Confirm</button>
+    </form>
+</body>
+</html>
